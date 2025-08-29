@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+  DI configuration: plugin on NVP API call + PayPal config preference to keep method visible for KWD quotes
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- Convert KWD->USD just before PayPal NVP call -->
+    <type name="Magento\Paypal\Model\Api\Nvp">
+        <plugin name="logicrays_paypal_usd_currency_plugin"
+                type="Logicrays\PaypalUsd\Plugin\Paypal\NvpCurrencyPlugin"
+                sortOrder="10"/>
+    </type>
+
+    <!-- Keep PayPal methods visible even if store/quote is in KWD -->
+    <preference for="Magento\Paypal\Model\Config"
+                type="Logicrays\PaypalUsd\Model\Magento\Paypal\Config"/>
+
+    <!-- Add KWD→USD conversion details to order status history -->
+    <type name="Magento\Sales\Model\Order">
+        <plugin name="logicrays_paypal_usd_order_history_plugin"
+                type="Logicrays\PaypalUsd\Plugin\Sales\OrderStatusHistoryPlugin"
+                sortOrder="10"/>
+    </type>
+</config>
