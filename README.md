@@ -282,6 +282,61 @@ Use PayPal Sandbox for testing:
 - **Seller Account**: Use your sandbox business account
 - **Test Cards**: Use PayPal's test credit card numbers
 
+### Test Credit Cards
+
+PayPal provides several test credit card numbers for sandbox testing. Use these cards to simulate different payment scenarios:
+
+#### Visa Test Cards
+
+| Card Number | Expiry Date | CVV | Description |
+|-------------|-------------|-----|-------------|
+| 4032038152741975 | 11/2028 | 567 | Standard Visa card |
+| 4532640527811646 | 09/2029 | 123 | Visa card for testing |
+| 4916337568665467 | 12/2027 | 456 | Another Visa test card |
+
+#### Mastercard Test Cards
+
+| Card Number | Expiry Date | CVV | Description |
+|-------------|-------------|-----|-------------|
+| 5425233430109903 | 12/2026 | 789 | Standard Mastercard |
+| 5105105105105100 | 12/2028 | 123 | Mastercard for testing |
+| 5555555555554444 | 12/2027 | 456 | Another Mastercard test card |
+
+#### American Express Test Cards
+
+| Card Number | Expiry Date | CVV | Description |
+|-------------|-------------|-----|-------------|
+| 378282246310005 | 12/2028 | 1234 | Standard Amex card |
+| 371449635398431 | 11/2029 | 5678 | Amex card for testing |
+
+#### Discover Test Cards
+
+| Card Number | Expiry Date | CVV | Description |
+|-------------|-------------|-----|-------------|
+| 6011111111111117 | 12/2028 | 123 | Standard Discover card |
+| 6011000990139424 | 12/2027 | 456 | Discover card for testing |
+
+#### Test Card Details
+
+**Important Notes:**
+- **CVV**: Any 3-4 digit number (123, 456, 789, 1234, 5678)
+- **Expiry Date**: Use any future date (MM/YYYY format)
+- **Billing Address**: Use any valid address format
+- **ZIP Code**: Use any 5-digit number (12345, 54321, etc.)
+
+**Test Card Behavior:**
+- All cards will be **declined** in live mode
+- Cards work only in **sandbox/test mode**
+- No real charges will be processed
+- Use for development and testing only
+
+**Generating Additional Test Cards:**
+1. Go to PayPal Developer Dashboard
+2. Navigate to Sandbox → Accounts
+3. Use the "Credit Card Generator" tool
+4. Select card type and country
+5. Generate new test card numbers as needed
+
 ## 🔒 Security Considerations
 
 - **API Credentials**: Store securely, never commit to version control
